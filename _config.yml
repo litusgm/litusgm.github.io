@@ -84,8 +84,13 @@ links:
   - blog:
       name: Blog
       show: true
-      href: http://carlosguerra.es/blog
-      icon: fas fa-book-open
+      href: https://carlosguerra.es/blog
+      icon: fas fa-clipboard-list
+  - project:
+      name: La Cazuela Roja
+      show: true
+      href: https://lacazuelaroja.com
+      icon: fas fa-utensils
   - twitter:
       name: Twitter
       show: false
