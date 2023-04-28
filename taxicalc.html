@@ -45,7 +45,7 @@
         margin-left: 30px;
         font-size: 14px;
       }
-
+      
       input[type="radio"] + label:before, input[type="checkbox"] + label:before {
         content: "";
         display: inline-block;
@@ -60,6 +60,12 @@
       input[type="radio"]:checked + label:before, input[type="checkbox"]:checked + label:before {
         background-color: #5f9ea0;
         border-color: #5f9ea0;
+      }
+      
+      input[type="radio"].sub + label {
+        display: block;
+        margin-left: 60px;
+        font-size: 14px;
       }
 
       /* Estilos para la caja de resultado */
@@ -97,14 +103,30 @@
     <label for="t2">T2 - &#127937; 3,35 € | &#128176; 1,38 €/km | &#9201; 23,04 €/h | Urbana</label><br>
 
     <input type="radio" id="t6" name="tarifa" value="t6" onclick="calcularPrecio()">
-    <label for="t6">T6 - &#127937; 6,75 € (incl. 3,30 km) | &#128176; 1,52 €/km | &#9201; 20,77 €/h | Interurbana</label><br>
+    <label for="t6">T6 - &#127937; 6,75 € (incl. 3,30 km) | &#128176; 1,52 €/km | &#9201; 20,77 €/h | Interurbana</label>
+    
+    <input type="radio" class="sub" id="t1t6" name="tarifa" value="t1t6" onclick="calcularPrecio()">
+    <label for="t1t6">T1 + T6 (Lab 8h-20h)</label><br>
 
     <input type="radio" id="t7" name="tarifa" value="t7" onclick="calcularPrecio()">
     <label for="t7">T7 - &#127937; 7,35 € (incl. 2,75 km) | &#128176; 1,62 €/km | &#9201; 22,47 €/h | Interurbana</label>
+    
+    <input type="radio" class="sub" id="t2t7" name="tarifa" value="t2t7" onclick="calcularPrecio()">
+    <label for="t2t7">T2 + T7 (Lab 21h-7h, Findes, + supl.noche.)</label>
+    
+    <input type="radio" class="sub" id="t1t7" name="tarifa" value="t1t7" onclick="calcularPrecio()">
+    <label for="t1t7">T1 + T7 (Lab 20h-21h, 7h-8h)</label><br>
+
     <br><br>
 
     <label for="precioFinal">&#128182;
     <input type="text" id="precioFinal" name="precioFinal" readonly> € </label>
+    
+    <hr>
+
+
+
+
 
     <script>
       function calcularPrecio() {
@@ -116,6 +138,12 @@
           precioFinal = 3.25 + (1.26 * kmRecorridos) + (22.08/60 * minEspera);
         } else if (document.getElementById("t2").checked) {
           precioFinal = 3.35 + (1.38 * kmRecorridos) + (23.04/60 * minEspera);
+        } else if (document.getElementById("t1t6").checked) {
+          precioFinal = 3.25 + (1.52 * kmRecorridos) + (20.77/60 * minEspera);
+        } else if (document.getElementById("t1t7").checked) {
+          precioFinal = 3.25 + (1.62 * kmRecorridos) + (22.47/60 * minEspera);
+        } else if (document.getElementById("t2t7").checked) {
+          precioFinal = 3.35 + (1.62 * kmRecorridos) + (22.47/60 * minEspera);          
         } else if (document.getElementById("t6").checked) {
           if (kmRecorridos <= 3.29915) {
             precioFinal = 6.75;
