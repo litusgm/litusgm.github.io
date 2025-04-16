@@ -201,10 +201,10 @@
       T-1
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 3,35 € </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,30 €/km </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 22,55 €/h </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-telephone"></i> Servicio de recogida: 1,75 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 3,50 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,33 €/km </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 23,35 €/h </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-telephone"></i> Servicio de recogida: 1,80 € </a></li>
       <li><a class="dropdown-item"><i class="bi bi-clock-fill"></i> L~V 7h~21h</a></li>
     </ul>
   </div>
@@ -213,11 +213,11 @@
       T-2
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 3,45 € </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,42 €/km </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 23,65 €/h </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-telephone"></i> Servicio de recogida: 1,75 € </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-moon-stars"></i> Noches fin de semana: 2,40 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 3,60 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,45 €/km </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 24,38 €/h </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-telephone"></i> Servicio de recogida: 1,80 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-moon-stars"></i> Noches fin de semana: 2,45 € </a></li>
       <li><a class="dropdown-item"><i class="bi bi-clock-fill"></i> L~V 21h~7h, S~D, Festivos</a></li>
     </ul>
   </div>
@@ -226,9 +226,9 @@
       T-6
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 6,90 € </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,56 €/km </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 21,31 €/h </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 7,12 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,60 €/km </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 21,99 €/h </a></li>
       <li><a class="dropdown-item"><i class="bi bi-clock-fill"></i> L~V 8h~20h</a></li>
     </ul>
   </div>
@@ -237,9 +237,9 @@
       T-7
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 7,50 € </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,68 €/km </a></li>
-      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 23,06 €/h </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-flag"></i> 7,74 € </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-car-front-fill"></i> 1,74 €/km </a></li>
+      <li><a class="dropdown-item"><i class="bi bi-hourglass-split"></i> 23,80 €/h </a></li>
       <li><a class="dropdown-item"><i class="bi bi-clock-fill"></i> L~V 20h~8h, S~D, Festivos</a></li>
     </ul>
   </div>
@@ -269,13 +269,13 @@
         const minEspera = document.getElementById("minEspera").value;
         const recogida = document.getElementById("recogida").checked;
         const noche = document.getElementById("noche").checked;
-        let t1 = Math.round((3.35 + (1.30 * kmRecorrido) + (22.55/60 * minEspera) + recogida * 1.75) * 20) / 20;
-        let t2 = Math.round((3.45 + (1.42 * kmRecorrido) + (23.65/60 * minEspera) + recogida * 1.75 + noche * 2.40) * 20) / 20;
-        let t6 = Math.round((Math.max(6.90,6.90 + (0.78 * 2 * (kmRecorrido - 3.29915) + (21.31/60 * minEspera))) + recogida * 1.75) * 20) / 20;
-        let t7 = Math.round((Math.max(7.50,7.50 + (0.84 * 2 * (kmRecorrido - 2.74929) + (23.06/60 * minEspera))) + recogida * 1.75) * 20) / 20;
-        let t1t6 = Math.round((3.35 + (0.78 * 2 * kmRecorrido) + (21.31/60 * minEspera) + recogida * 1.75) * 20) / 20;
-        let t1t7 = Math.round((3.35 + (0.84 * 2 * kmRecorrido) + (23.06/60 * minEspera) + recogida * 1.75) * 20) / 20;
-        let t2t7 = Math.round((3.45 + (0.84 * 2 * kmRecorrido) + (23.06/60 * minEspera) + recogida * 1.75 + noche * 2.40) * 20) / 20;
+        let t1 = Math.round((3.50 + (1.33 * kmRecorrido) + (23.35/60 * minEspera) + recogida * 1.80) * 20) / 20;
+        let t2 = Math.round((3.60 + (1.45 * kmRecorrido) + (24.38/60 * minEspera) + recogida * 1.80 + noche * 2.45) * 20) / 20;
+        let t6 = Math.round((Math.max(7.12,7.12 + (0.80 * 2 * (kmRecorrido - 3.29915) + (21.99/60 * minEspera))) + recogida * 1.80) * 20) / 20;
+        let t7 = Math.round((Math.max(7.74,7.74 + (0.87 * 2 * (kmRecorrido - 2.74929) + (23.80/60 * minEspera))) + recogida * 1.80) * 20) / 20;
+        let t1t6 = Math.round((3.50 + (0.80 * 2 * kmRecorrido) + (21.99/60 * minEspera) + recogida * 1.80) * 20) / 20;
+        let t1t7 = Math.round((3.50 + (0.87 * 2 * kmRecorrido) + (23.80/60 * minEspera) + recogida * 1.80) * 20) / 20;
+        let t2t7 = Math.round((3.60 + (0.87 * 2 * kmRecorrido) + (23.80/60 * minEspera) + recogida * 1.80 + noche * 2.45) * 20) / 20;
 
         document.querySelectorAll('.pvpT1').forEach( (x) => { x.textContent = t1.toFixed(2) + "€" } );
         document.querySelectorAll('.pvpT2').forEach( (x) => { x.textContent = t2.toFixed(2) + "€" } );
